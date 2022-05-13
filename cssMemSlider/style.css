@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body{
+    background-color: #04080fff;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.meme1{
+    background-image: url(src/1.png);
+}
+.meme2{
+    background-image: url(src/2.png);
+}
+.meme3{
+    background-image: url(src/3.png);
+}
+.meme4{
+    background-image: url(src/4.png);
+}
+.wrapper{
+   height: 73%; 
+   width: 100%;
+   background-color: #6f686dff;
+}
+.memes-wrapper{
+    width: 25%;
+    transition: .6s;
+    background: black;
+}
+.memes{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.content{
+    display: flex;
+    height: 85%;
+    width: 400%;
+}
+.wrapper-container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+.button{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+.controls{
+    display: flex;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+.border{
+    width: 1.2rem;
+    height: 1.2rem;
+    background: slategray;
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.text-slider{
+    display: flex;
+    width: 400%;
+}
+.text{
+    width: 100%;
+    transition: .6s;
+    text-align: start;
+}
+.text-content{
+    overflow: hidden;
+}
+.border:hover{
+    background-color: rgb(90, 0, 0) ;
+}
+.border:active{
+    background-color: rgb(240, 144, 144) ;
+}
+.border:checked{
+    background-color:bisque ;
+}
+input{
+    display: none;
+}
+#meme1:checked ~ .content .first{
+    transform: translate(0);
+}
+#meme2:checked ~ .content .memes-wrapper{
+    transform: translate(-100%) ;
+}
+#meme3:checked ~ .content .memes-wrapper{
+    transform: translate(-200%) ;
+}
+#meme4:checked ~ .content .memes-wrapper{
+    transform: translate(-300%) ;
+}
+#meme4:checked ~ .bottom .text-content .text-slider .text{
+    transform: translate(-300%) ;
+}
+#meme3:checked ~ .bottom .text-content .text-slider .text{
+    transform: translate(-200%) ;
+}
+#meme2:checked ~ .bottom .text-content .text-slider .text{
+    transform: translate(-100%) ;
+}
+#meme1:checked ~ .bottom .text-content .text-slider .text{
+    transform: translate(0) ;
+}
+
+#meme1:checked ~ .bottom .controls .button .one{
+   background-color: rgb(19, 119, 207);
+}
+#meme2:checked ~ .bottom .controls .button .two{
+   background-color: rgb(19, 119, 207);
+}
+#meme3:checked ~ .bottom .controls .button .three{
+   background-color: rgb(19, 119, 207);
+}
+#meme4:checked ~ .bottom .controls .button .for{
+   background-color: rgb(19, 119, 207);
+}
+#meme1:checked ~ .bottom .controls .button .one:hover{
+   background-color: rgb(0, 32, 61);
+}
+#meme2:checked ~ .bottom .controls .button .two:hover{
+   background-color: rgb(0, 32, 61);
+}
+#meme3:checked ~ .bottom .controls .button .three:hover{
+   background-color: rgb(0, 32, 61);
+}
+#meme4:checked ~ .bottom .controls .button .for:hover{
+   background-color: rgb(0, 32, 61);
+}
+ @media (max-width: 425px) {
+    .bottom{
+    flex-direction: column-reverse;
+    }
+    .controls{
+    margin: 0 auto;
+    }
+    .wrapper{
+        width: 90%;
+    }
+}
